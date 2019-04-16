@@ -16,7 +16,7 @@ const DashboardAppBar = styled(({open, drawerwidth, ...other}) => <AppBar {...ot
 
 const DashboardDrawer = styled(({open, drawerwidth, ...other}) => <Drawer {...other} classes={{paper: 'paper'}} />)`
   .paper {
-      position: relative;
+      position: fixed;
       width: ${props => props.open ? `${props.drawerwidth}px` : '72px'};
       overflow-x: ${props => !props.open && 'hidden'};
   }
@@ -27,11 +27,19 @@ const DashboardLogo = styled.div`
   line-height: 30px;
 `
 
+const DashboardMain = styled.main`
+  flex-grow: 1;
+  height: 100vh;
+  padding-top: 64px;
+  margin-left: ${props => props.open ? `${props.drawerwidth}px` : '72px'};
+`
+
 export {
     DashboardContainer,
     DashboardAppBar,
     DashboardDrawer,
-    DashboardLogo
+    DashboardLogo,
+    DashboardMain
 }
 
 

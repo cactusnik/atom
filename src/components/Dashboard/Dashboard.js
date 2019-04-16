@@ -12,7 +12,8 @@ import {
     DashboardContainer,
     DashboardAppBar,
     DashboardDrawer,
-    DashboardLogo
+    DashboardLogo,
+    DashboardMain
 } from './StyledDashboard'
 
 const Dashboard = () => {
@@ -35,6 +36,9 @@ const Dashboard = () => {
                 <Divider />
                 <Menu />
             </DashboardDrawer>
+            <DashboardMain open={open} drawerwidth="240">
+                <h1>Test</h1>
+            </DashboardMain>
         </DashboardContainer>
     )
 }
