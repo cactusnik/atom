@@ -7,7 +7,7 @@ import Divider from '@material-ui/core/Divider'
 import CssBaseline from '@material-ui/core/CssBaseline'
 
 import Menu from '../Menu'
-
+import Clients from '../Pages/Clients'
 import {
     DashboardContainer,
     DashboardAppBar,
@@ -37,7 +37,7 @@ const Dashboard = () => {
                 <Menu />
             </DashboardDrawer>
             <DashboardMain open={open} drawerwidth="240">
-                <h1>Test</h1>
+                <Clients />
             </DashboardMain>
         </DashboardContainer>
     )
