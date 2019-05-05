@@ -5,7 +5,7 @@ export default class Api {
 
     headers = () => {
         const requestHeader = new Headers()
-        const bearer = 'Bearer  ' + 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI6IllXVXdZamszTjJFellUaGtabVkyWkRVMlltSmxPRE16WTJVNU1XWTNNelV6WkRNME16TTFOREUzTWpobE5EUmhaR1ZqTkRNd1pHSTBOR0kwTkRjNE1nPT0ifQ.eyJpc3MiOiJodHRwOlwvXC9hdG9teS5jYyIsImp0aSI6IllXVXdZamszTjJFellUaGtabVkyWkRVMlltSmxPRE16WTJVNU1XWTNNelV6WkRNME16TTFOREUzTWpobE5EUmhaR1ZqTkRNd1pHSTBOR0kwTkRjNE1nPT0iLCJpYXQiOjE1NTYyMjY3NDcsImV4cCI6MTU1NjIzMzk0NywibmJmIjoxNTU2MjI2NzQ3LCJ1aWQiOjE4LCJ0eXBlIjoiYWNjZXNzIn0.0YBkq6HSDQxhx9-XiH9Qf7sp3U2dhMO3Xw6pkqn8D3o';
+        const bearer = 'Bearer  ' + 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI6Ik9HTXpNbVprTjJNMk5EZzBZbVkzWWpKbVpHVmlZbVZtTmpnd1pXWXpPR1EyTjJOak1UazFabUpqTmpSa01qZzNNek14WVRjek5EQmxPR05qWkRReU5nPT0ifQ.eyJpc3MiOiJodHRwOlwvXC9hdG9teS5jYyIsImp0aSI6Ik9HTXpNbVprTjJNMk5EZzBZbVkzWWpKbVpHVmlZbVZtTmpnd1pXWXpPR1EyTjJOak1UazFabUpqTmpSa01qZzNNek14WVRjek5EQmxPR05qWkRReU5nPT0iLCJpYXQiOjE1NTY4MjU0MjAsImV4cCI6MTU1NjgzMjYyMCwibmJmIjoxNTU2ODI1NDIwLCJ1aWQiOjE4LCJ0eXBlIjoiYWNjZXNzIn0.HL2o0vA7TegDWYqjCmTU794eGZE43R_U74UjqjWQQLw';
         requestHeader.append('Accept', 'application/json, text/plain, */*')
         requestHeader.append('Content-Type', 'application/json')
         requestHeader.append('Authorization', bearer)
@@ -29,9 +29,6 @@ export default class Api {
         if (!res.ok) {
             throw new Error(`Could not fetch ${url}, received ${res.status}`)
         }
-
-        const jsonData = await res.json()
-        console.log(jsonData)
 
         return await res.json()
     }

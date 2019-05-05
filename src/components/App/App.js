@@ -6,6 +6,7 @@ import { create } from 'jss'
 import { createGenerateClassName, jssPreset } from '@material-ui/core/styles'
 
 import Dashboard from '../Dashboard'
+import { Login } from '../Pages'
 import theme from '../../themes'
 
 const generateClassName = createGenerateClassName()
@@ -19,7 +20,7 @@ const App = () => {
     return (
         <MuiThemeProvider theme={theme}>
             <JssProvider jss={jss} generateClassName={generateClassName}>
-                <Dashboard />
+                <Login />
             </JssProvider>
         </MuiThemeProvider>
     )

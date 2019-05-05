@@ -39,7 +39,7 @@ export class Clients extends Component {
     }
 
     componentDidMount() {
-        this.props.dispatch(fetchClients())
+        // this.props.dispatch(fetchClients())
     }
 
     render () {
