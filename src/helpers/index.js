@@ -1,4 +1,4 @@
-import authHeader from './auth-header'
+import { authHeader } from './auth-header'
 
 export {
     authHeader

@@ -1,3 +1,5 @@
+import { authHeader } from '../helpers/auth-header'
+
 export default class Api {
     constructor() {
         this.apiBase = 'https://cors-anywhere.herokuapp.com/http://cde.pp.ua/api/v1'
@@ -5,10 +7,9 @@ export default class Api {
 
     headers = () => {
         const requestHeader = new Headers()
-        const bearer = 'Bearer  ' + 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI6Ik9HTXpNbVprTjJNMk5EZzBZbVkzWWpKbVpHVmlZbVZtTmpnd1pXWXpPR1EyTjJOak1UazFabUpqTmpSa01qZzNNek14WVRjek5EQmxPR05qWkRReU5nPT0ifQ.eyJpc3MiOiJodHRwOlwvXC9hdG9teS5jYyIsImp0aSI6Ik9HTXpNbVprTjJNMk5EZzBZbVkzWWpKbVpHVmlZbVZtTmpnd1pXWXpPR1EyTjJOak1UazFabUpqTmpSa01qZzNNek14WVRjek5EQmxPR05qWkRReU5nPT0iLCJpYXQiOjE1NTY4MjU0MjAsImV4cCI6MTU1NjgzMjYyMCwibmJmIjoxNTU2ODI1NDIwLCJ1aWQiOjE4LCJ0eXBlIjoiYWNjZXNzIn0.HL2o0vA7TegDWYqjCmTU794eGZE43R_U74UjqjWQQLw';
         requestHeader.append('Accept', 'application/json, text/plain, */*')
         requestHeader.append('Content-Type', 'application/json')
-        requestHeader.append('Authorization', bearer)
+        requestHeader.append('Authorization', authHeader())
 
         return requestHeader
     }

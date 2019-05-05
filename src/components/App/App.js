@@ -1,6 +1,6 @@
 import React from 'react'
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import PrivateRoute from '../private-route'
 
 import JssProvider from 'react-jss/lib/JssProvider'
@@ -23,8 +23,10 @@ const App = () => {
         <MuiThemeProvider theme={theme}>
             <JssProvider jss={jss} generateClassName={generateClassName}>
                 <BrowserRouter>
-                    <PrivateRoute path="/" component={Dashboard} />
-                    <Route path="/login" component={Login} />
+                    <Switch>
+                        <Route path="/login" component={Login} />
+                        <PrivateRoute path="/" component={Dashboard} />
+                    </Switch>
                 </BrowserRouter>
             </JssProvider>
         </MuiThemeProvider>

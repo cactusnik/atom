@@ -44,7 +44,7 @@ const login = (email, password) => (dispatch) => {
 const getUser = () => (dispatch) => {
     dispatch(request())
 
-    api.get('/login')
+    api.get('/users')
         .then(
             response => {
                 console.log(response)

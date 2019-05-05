@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Switch, Route } from 'react-router-dom'
-
+import { connect } from 'react-redux'
 import Toolbar from '@material-ui/core/Toolbar'
 import IconButton from '@material-ui/core/IconButton'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import Divider from '@material-ui/core/Divider'
 import CssBaseline from '@material-ui/core/CssBaseline'
 
+import { userActions } from '../../actions'
 import Menu from '../Menu'
 import { Clients } from '../Pages'
 import {
@@ -17,8 +18,12 @@ import {
     DashboardMain
 } from './StyledDashboard'
 
-const Dashboard = () => {
+const Dashboard = (props) => {
     const [open, handleDrawerOpen] = useState(true)
+
+    useEffect(() => {
+        props.dispatch(userActions.getUser())
+    }, [])
 
     return (
         <DashboardContainer>
@@ -46,4 +51,4 @@ const Dashboard = () => {
     )
 }
 
-export default Dashboard
+export default connect()(Dashboard)
