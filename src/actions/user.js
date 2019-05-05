@@ -3,20 +3,15 @@ import Api from '../services/Api'
 
 const api = new Api()
 
-export const userActions = {
-    login,
-    logout,
-    getUser
-}
-
 const login = (email, password) => (dispatch) => {
     dispatch(request())
 
-    api.post('/account/login')
+    api.post('/account/login', { email, password })
         .then(
             response => {
-                console.log(response)
-                // dispatch(success())
+                console.log(response.access_token)
+                localStorage.setItem('token', response.access_token)
+                dispatch(success())
             }
         )
         .catch(
@@ -85,4 +80,10 @@ const logout = () => {
     return {
         type: userConstants.USERS_LOGOUT
     }
+}
+
+export const userActions = {
+    login,
+    logout,
+    getUser
 }

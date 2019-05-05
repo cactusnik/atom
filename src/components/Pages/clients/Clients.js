@@ -38,10 +38,6 @@ export class Clients extends Component {
         })
     }
 
-    componentDidMount() {
-        // this.props.dispatch(fetchClients())
-    }
-
     render () {
         const { tab } = this.state
 

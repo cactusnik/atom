@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Switch, Route } from 'react-router-dom'
 
 import Toolbar from '@material-ui/core/Toolbar'
 import IconButton from '@material-ui/core/IconButton'
@@ -7,7 +8,7 @@ import Divider from '@material-ui/core/Divider'
 import CssBaseline from '@material-ui/core/CssBaseline'
 
 import Menu from '../Menu'
-import Clients from '../Pages/Clients'
+import { Clients } from '../Pages'
 import {
     DashboardContainer,
     DashboardAppBar,
@@ -37,7 +38,9 @@ const Dashboard = () => {
                 <Menu />
             </DashboardDrawer>
             <DashboardMain open={open} drawerwidth="240">
-                <Clients />
+                <Switch>
+                    <Route path="/clients" component={Clients} />
+                </Switch>
             </DashboardMain>
         </DashboardContainer>
     )
