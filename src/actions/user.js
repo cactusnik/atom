@@ -9,7 +9,6 @@ const login = (email, password) => (dispatch) => {
     api.post('/account/login', { email, password })
         .then(
             response => {
-                console.log(response.access_token)
                 localStorage.setItem('token', response.access_token)
                 dispatch(success())
             }

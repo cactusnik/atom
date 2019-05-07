@@ -36,7 +36,6 @@ class Login extends Component {
         e.preventDefault()
 
         const { email, password } = this.state
-        console.log(email, password)
         this.props.dispatch(userActions.login(email, password))
 
     }

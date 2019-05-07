@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import { fetchClients } from '../../../actions/clients'
+import { contactsActions } from '../../../actions'
 
 import Grid from '@material-ui/core/Grid'
 import InputBase from '@material-ui/core/InputBase'
@@ -36,6 +36,10 @@ export class Clients extends Component {
         this.setState({
             tab: value
         })
+    }
+
+    componentDidMount() {
+        this.props.dispatch(contactsActions.getContacts())
     }
 
     render () {
